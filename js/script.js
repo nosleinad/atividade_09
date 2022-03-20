@@ -4,7 +4,7 @@
 function tabuada() {
     let numeroTabuada = document.getElementById("numeroTabuada").value;
     let tabuada = '';
-    if(numeroTabuada == ''){
+    if (numeroTabuada == '') {
         resultado01.innerHTML = `Informe um valor válido.`;
         return false;
     }
@@ -33,6 +33,28 @@ function mostraValor() {
 }
 
 /* Resolução Questão 03 */
+/* let item = document.getElementById('item').value;
+let novoItem = [];
+function incluirItem() {
+    if (item == '') {
+        resultado03.innerHTML = `Necessário preencher com algum caractere.`;
+
+    } else {
+        /* item.push(novoItem);
+        lacoFor(); */
+       /*   resultado03.innerHTML = `ELSE`;
+    }
+}
+
+function lacoFor() {
+
+    /* for (i = 0; i < novoItem.length; i++) {
+        texto += `<li>${novoItem[i].toLowerCase()}</li>`;
+    } */
+
+ /*    document.getElementById("resultado03").innerHTML = `Adicionado com SUCESSO.${texto}`;
+} */
+
 /* Resolução Questão 04 */
 
 function megasena() {
@@ -41,7 +63,8 @@ function megasena() {
     for (let count = 0; count < 6; count++) {
         sorteados += Math.floor(Math.random() * 60) + 1 + ", ";
     }
-   
+
     resultado04.innerHTML = `Números Sorteados: ${sorteados}`;
 }
+
 /* Resolução Questão 05 */
