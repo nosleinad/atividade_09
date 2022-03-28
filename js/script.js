@@ -42,17 +42,17 @@ function incluirItem() {
     } else {
         /* item.push(novoItem);
         lacoFor(); */
-       /*   resultado03.innerHTML = `ELSE`;
-    }
+/*   resultado03.innerHTML = `ELSE`;
+}
 }
 
 function lacoFor() {
 
-    /* for (i = 0; i < novoItem.length; i++) {
-        texto += `<li>${novoItem[i].toLowerCase()}</li>`;
-    } */
+/* for (i = 0; i < novoItem.length; i++) {
+ texto += `<li>${novoItem[i].toLowerCase()}</li>`;
+} */
 
- /*    document.getElementById("resultado03").innerHTML = `Adicionado com SUCESSO.${texto}`;
+/*    document.getElementById("resultado03").innerHTML = `Adicionado com SUCESSO.${texto}`;
 } */
 
 /* Resolução Questão 04 */
@@ -68,3 +68,99 @@ function megasena() {
 }
 
 /* Resolução Questão 05 */
+let lsHomem = [];
+let lsMulher = [];
+let resultado = '';
+
+function addPessoa() {
+    let nome = document.getElementById('nomePessoa').value;
+    let sexo = document.getElementById('sexoPessoa').value;
+
+
+    if (nome == '') {
+
+        resultado = `Resultado: Informe um nome para cadastrar.`
+
+        document.getElementById('resultado05').innerHTML = resultado;
+        return false;
+
+
+    }
+
+    /*  EXEMPLO COM IF ELSE */
+    /*   if (sexo == 'M') {
+          lsHomem.push(nome);
+      }
+      else if(sexo == 'F'){
+          lsMulher.push(nome);
+      } else {
+  
+      } */
+
+    switch (sexo) {
+        case 'M':
+            lsHomem[lsHomem.length] = nome;
+            break;
+        case 'F':
+            lsMulher[lsMulher.length] = nome;
+            break;
+        default:
+            break;
+    }
+
+    resultado = `Resultado: Adicionado com Sucesso!!`
+
+    document.getElementById('resultado05').innerHTML = resultado;
+
+
+}
+
+function showPessoa() {
+    resultado = `Resultado: <br />Lista de homens => ${lsHomem} <br />Lista de mulheres => ${lsMulher} `
+
+    document.getElementById('resultado05').innerHTML = resultado;
+
+}
+
+function clearPessoa() {
+    lsHomem = [];
+    lsMulher = [];
+
+    resultado = `Resultado: Lista  apagada com sucesso!!`
+    document.getElementById('resultado05').innerHTML = resultado;
+
+}
+
+
+/* Desafio JoKenPO */
+let qtv = 0;
+let qtd = 0;
+let qte = 0;
+
+function jogar(j) {
+    let opcoes = ['✊🏽', '🖐🏽', '✌🏽']
+    let pc = Math.trunc(Math.random() * 3);
+    let resultado = "";
+
+    pc = opcoes[pc];
+    document.getElementById("adversario").innerHTML = `${j} X ${pc}`;
+
+    if (j == pc) {
+        resultado = "Resultado: Empate";
+        qte++
+    } else
+        if ((j == '✊🏽' && pc == '✌🏽')
+            || (j == '🖐🏽' && pc == '✊🏽')
+            || (j == '✌🏽' && pc == '🖐🏽')) {
+            resultado = "Resultado: Vitória";
+            qtv++
+
+        } else {
+            resultado = "Resultado: Derota";
+            qtd++
+        }
+    document.getElementById('resultado-desafio').innerHTML = resultado;
+
+    document.getElementById('placar').innerHTML = `Vitorias (${qtv}) - Empate (${qte}) - Derotas (${qtd})`;
+
+}

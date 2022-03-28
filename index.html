@@ -59,35 +59,36 @@
                     Lista homens e mulheres.
                     <a href="detalhes.html" target="_blank">Referência</a></span>
             </h1>
-            <p id="">
+            <p id="resultado05">
                 Resultado: <br />Lista de homens [xxxx,xxxx,xxxx,xxxxx] <br />Lista de
                 mulheres [xxxx,xxxx,xxxx,xxxxx]
             </p>
             <label for="">Nome:</label>
-            <input type="text" id="" />
+            <input type="text" id="nomePessoa" />
             <label for="">Sexo:</label>
-            <select name="sexo" id="">
+            <select name="sexo" id="sexoPessoa">
                 <option value="M">Masculino</option>
                 <option value="F">Feminino</option>
             </select>
-            <input type="button" value="Adicionar" />
-            <input type="button" value="Visualizar" />
-            <input type="button" value="Apagar" />
+            <input onclick="addPessoa()" type="button" value="Adicionar" />
+            <input onclick="showPessoa()" type="button" value="Visualizar" />
+            <input onclick="clearPessoa()" type="button" value="Apagar" />
         </div>
         <div class="questao">
             <h1>
                 DESAFIOO!:<span>
                     Jo-Ken-Po. <a href="detalhes.html" target="_blank"> Referência</a></span>
             </h1>
-            <p id="">Resultado: [Vitória|Derrota|Empate]</p>
-            <span onmouseover="this.style.fontSize = '50px'" onmouseout="this.style.fontSize = '30px'"
+            <p id="resultado-desafio">Resultado: [Vitória|Derrota|Empate]</p>
+            <span onclick="jogar('✊🏽')" onmouseover="this.style.fontSize = '50px'" onmouseout="this.style.fontSize = '30px'"
                 class="mao">✊🏽</span>
-            <span onmouseover="this.style.fontSize = '50px'" onmouseout="this.style.fontSize = '30px'"
+            <span onclick="jogar('🖐🏽')" onmouseover="this.style.fontSize = '50px'" onmouseout="this.style.fontSize = '30px'"
                 class="mao">🖐🏽</span>
-            <span onmouseover="this.style.fontSize = '50px'" onmouseout="this.style.fontSize = '30px'"
+            <span onclick="jogar('✌🏽')" onmouseover="this.style.fontSize = '50px'" onmouseout="this.style.fontSize = '30px'"
                 class="mao">✌🏽</span>
             #
-            <span class="adversario">👋🏽</span>
+            <span class="adversario" id="adversario">👋🏽</span>
+            <p id="placar"></p>
         </div>
     </div>
 
