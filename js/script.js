@@ -4,17 +4,21 @@
 function tabuada() {
     let numeroTabuada = document.getElementById("numeroTabuada").value;
     let tabuada = '';
+
     if (numeroTabuada == '') {
-        resultado01.innerHTML = `Informe um valor válido.`;
+        resultado = `Informe um valor válido.`;
+        document.getElementById('resultado01').innerHTML = resultado
+
         return false;
     }
 
     for (let count = 1; count <= 10; count++) {
         tabuada += numeroTabuada + " x " + count + " = " + numeroTabuada * count + "<br />";
-        resultado01.innerHTML = `Resultado: <br>${tabuada}`;
 
     }
 
+    resultado = `Resultado: <br>${tabuada}`;
+    document.getElementById('resultado01').innerHTML = resultado
 }
 
 /* Resolução Questão 02 */
@@ -26,45 +30,61 @@ function mostraValor() {
 
     for (let count = valor01; count <= valor02; count++) {
         valores += count + ", ";
-        resultado02.innerHTML = `Resultado: Os número entre ${valor01} e ${valor02} são (${valores})`;
-    }
 
+    }
+    valores = `Resultado: Os número entre ${valor01} e ${valor02} são: (${valores})`;
+    document.getElementById('resultado02').innerHTML = valores;
 
 }
 
 /* Resolução Questão 03 */
-/* let item = document.getElementById('item').value;
-let novoItem = [];
-function incluirItem() {
+
+let lsItem = [];
+
+function addItem() {
+
+    let item = document.getElementById('item').value;
+
     if (item == '') {
-        resultado03.innerHTML = `Necessário preencher com algum caractere.`;
 
-    } else {
-        /* item.push(novoItem);
-        lacoFor(); */
-/*   resultado03.innerHTML = `ELSE`;
+        let resultado = `Resultado: Informe um Item para cadastrar.`;
+
+        document.getElementById('resultado03').innerHTML = resultado;
+        return false;
+    }
+    lsItem.push(item);
+    resultado = `Resultado: Adicionado com Sucesso!!`
+    document.getElementById('resultado03').innerHTML = resultado;
 }
+
+function showItens() {
+    let resultado = `Resultado: A lista de itens é: [${lsItem}]`;
+    document.getElementById("resultado03").innerHTML = resultado;
 }
 
-function lacoFor() {
+function clearItens() {
+    lsItem = [];
+    showItens();
+}
 
-/* for (i = 0; i < novoItem.length; i++) {
- texto += `<li>${novoItem[i].toLowerCase()}</li>`;
-} */
-
-/*    document.getElementById("resultado03").innerHTML = `Adicionado com SUCESSO.${texto}`;
-} */
 
 /* Resolução Questão 04 */
 
 function megasena() {
-    let sorteados = '';
+    let sorteados = 0;
+    let i = 1;
+    let jogo = [];
 
-    for (let count = 0; count < 6; count++) {
-        sorteados += Math.floor(Math.random() * 60) + 1 + ", ";
+
+    while (i <= 6) {
+
+        sorteados = Math.trunc((Math.random() * 59) + 1);
+        jogo.push(sorteados);
+        i++;
+
     }
 
-    resultado04.innerHTML = `Números Sorteados: ${sorteados}`;
+    document.getElementById('resultado04').innerHTML = `Números Sorteados: ${jogo}`;
 }
 
 /* Resolução Questão 05 */
@@ -133,6 +153,7 @@ function clearPessoa() {
 
 
 /* Desafio JoKenPO */
+
 let qtv = 0;
 let qtd = 0;
 let qte = 0;
